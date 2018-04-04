@@ -16,8 +16,8 @@ import (
 	"time"
 
 	"github.com/blang/semver"
-	"github.com/tebeka/selenium/firefox"
-	"github.com/tebeka/selenium/log"
+	"github.com/stanchan/selenium/firefox"
+	"github.com/stanchan/selenium/log"
 )
 
 // Errors returned by Selenium server.
@@ -596,7 +596,8 @@ func (wd *remoteWD) CurrentURL() (string, error) {
 func (wd *remoteWD) Get(url string) error {
 	requestURL := wd.requestURL("/session/%s/url", wd.id)
 	params := map[string]string{
-		"url": url,
+		"sessionId": wd.id,
+		"url":       url,
 	}
 	data, err := json.Marshal(params)
 	if err != nil {
@@ -975,8 +976,9 @@ func (wd *remoteWD) GetCookies() ([]Cookie, error) {
 }
 
 func (wd *remoteWD) AddCookie(cookie *Cookie) error {
-	return wd.voidCommand("/session/%s/cookie", map[string]*Cookie{
-		"cookie": cookie,
+	return wd.voidCommand("/session/%s/cookie", map[string]interface{}{
+		"sessionId": wd.id,
+		"cookie":    cookie,
 	})
 }
 

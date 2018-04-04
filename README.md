@@ -1,15 +1,15 @@
 # The most complete, best-tested WebDriver client for Go
 
-[![GoDoc](https://godoc.org/github.com/tebeka/selenium?status.svg)](https://godoc.org/github.com/tebeka/selenium)
-[![Travis](https://travis-ci.org/tebeka/selenium.svg?branch=master)](https://travis-ci.org/tebeka/selenium)
-[![Go Report Card](https://goreportcard.com/badge/github.com/tebeka/selenium)](https://goreportcard.com/report/github.com/tebeka/selenium)
+[![GoDoc](https://godoc.org/github.com/stanchan/selenium?status.svg)](https://godoc.org/github.com/stanchan/selenium)
+[![Travis](https://travis-ci.org/stanchan/selenium.svg?branch=master)](https://travis-ci.org/stanchan/selenium)
+[![Go Report Card](https://goreportcard.com/badge/github.com/stanchan/selenium)](https://goreportcard.com/report/github.com/stanchan/selenium)
 
 ## About
 
 This is a [WebDriver][selenium] client for [Go][go]. It supports the [WebDriver
 protocol][webdriver] and has been tested with various versions of [Selenium
 WebDriver][selenium], Firefox and [Geckodriver][geckodriver], and Chrome and
-[ChromeDriver][chromedriver], 
+[ChromeDriver][chromedriver],
 
 `selenium` is currently maintained by Eric Garrido ([@minusnine][minusnine]).
 
@@ -25,7 +25,7 @@ WebDriver][selenium], Firefox and [Geckodriver][geckodriver], and Chrome and
 
 Run
 
-    go get github.com/tebeka/selenium
+    go get github.com/stanchan/selenium
 
 to fetch the package.
 
@@ -34,10 +34,10 @@ versions of a web browser being driven by Selenium WebDriver.
 
 ## Documentation
 
-The API documentation is at https://godoc.org/github.com/tebeka/selenium. See
-[the example](https://github.com/tebeka/selenium/blob/master/example_test.go)
+The API documentation is at https://godoc.org/github.com/stanchan/selenium. See
+[the example](https://github.com/stanchan/selenium/blob/master/example_test.go)
 and [the unit
-tests](https://github.com/tebeka/selenium/blob/master/remote_test.go) for
+tests](https://github.com/stanchan/selenium/blob/master/remote_test.go) for
 better usage information.
 
 ## Known Issues
@@ -50,7 +50,7 @@ intervention.
 Please feel free to [file an issue][issue] if this client doesn't work as
 expected.
 
-[issue]: https://github.com/tebeka/selenium/issues/new
+[issue]: https://github.com/stanchan/selenium/issues/new
 
 Below are known issues that affect the usage of this API. There are likely
 others filed on the respective issue trackers.
@@ -117,7 +117,7 @@ a more idiomatic type.
 
 ## Hacking
 
-Patches are encouraged through GitHub pull requests. Please ensure that: 
+Patches are encouraged through GitHub pull requests. Please ensure that:
 
 1. A test is added for anything more than a trivial change and that the
    existing tests pass. See below for instructions on setting up your test
@@ -129,7 +129,7 @@ Patches are encouraged through GitHub pull requests. Please ensure that:
 
 See [the issue tracker][issues] for features that need implementing.
 
-[issues]: https://github.com/tebeka/selenium/issues
+[issues]: https://github.com/stanchan/selenium/issues
 
 ### Downloading Dependencies
 
@@ -147,14 +147,14 @@ init.go change.
 
 Run the tests:
 
-    $ go test 
+    $ go test
 
 * There is one top-level test for each of:
     1. Chromium and ChromeDriver.
     2. A new version of Firefox and Selenium 3.
     3. HTMLUnit, a Java-based lightweight headless browser implementation.
     4. A new version of Firefox directly against Geckodriver.
-    
+
   There are subtests that are shared between both top-level tests.
 
 * To run only one of the top-level tests, pass one of:
@@ -193,7 +193,7 @@ within the Docker container).
 For debugging Docker directly, run the following commands:
 
     $ docker build -t go-selenium testing/
-    $ docker run --volume=${GOPATH?}:/code --workdir=/code/src/github.com/tebeka/selenium -it go-selenium bash
+    $ docker run --volume=${GOPATH?}:/code --workdir=/code/src/github.com/stanchan/selenium -it go-selenium bash
 
 ### Testing With Sauce Labs
 
@@ -211,4 +211,4 @@ Dashboard](https://saucelabs.com/beta/dashboard/tests).
 
 This project is licensed under the [MIT][mit] license.
 
-[mit]: https://raw.githubusercontent.com/tebeka/selenium/master/LICENSE
+[mit]: https://raw.githubusercontent.com/stanchan/selenium/master/LICENSE

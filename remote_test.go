@@ -19,10 +19,10 @@ import (
 
 	"github.com/blang/semver"
 	"github.com/google/go-cmp/cmp"
-	"github.com/tebeka/selenium/chrome"
-	"github.com/tebeka/selenium/firefox"
-	"github.com/tebeka/selenium/log"
-	"github.com/tebeka/selenium/sauce"
+	"github.com/stanchan/selenium/chrome"
+	"github.com/stanchan/selenium/firefox"
+	"github.com/stanchan/selenium/log"
+	"github.com/stanchan/selenium/sauce"
 )
 
 var (
@@ -390,7 +390,7 @@ func TestDocker(t *testing.T) {
 	}
 	// TODO(minusnine): pass through relevant flags to docker-test.sh to be
 	// passed to go test.
-	cmd := exec.Command("docker", "run", fmt.Sprintf("--volume=%s:/code", pathToMount), "--workdir=/code/src/github.com/tebeka/selenium", "go-selenium", "testing/docker-test.sh")
+	cmd := exec.Command("docker", "run", fmt.Sprintf("--volume=%s:/code", pathToMount), "--workdir=/code/src/github.com/stanchan/selenium", "go-selenium", "testing/docker-test.sh")
 	if testing.Verbose() {
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
